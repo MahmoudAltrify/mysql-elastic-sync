@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: sync-app
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=mysql-elastic-sync
+      - ELASTICSEARCH_NODE=http://elasticsearch:9200
+    depends_on:
+      - mysql
+      - elasticsearch
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000" 
+
+  mysql:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: mysql-elastic-sync
+    ports:
+      - "33066:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  elasticsearch:
+    image: elasticsearch:8.14.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+    volumes:
+      - elastic-data:/usr/share/elasticsearch/data
+
+volumes:
+  mysql-data:
+  elastic-data:

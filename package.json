@@ -1,0 +1,19 @@
+{
+  "name": "mysql-elastic-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "start": "node src/app.js",
+  "listen": "node src/binlog-listener.js"
+},
+  "keywords": [],
+  "author": "Mahmoud H. Isreawe",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^9.0.1",
+    "dotenv": "^16.5.0",
+    "mysql2": "^3.14.1",
+    "zongji": "^0.5.1"
+  }
+}

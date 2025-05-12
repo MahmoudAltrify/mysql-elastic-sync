@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "start": "node src/app.js",
-  "create:table": "node src/scripts/create-table.js",
-  "seed:table": "node src/scripts/seed-data.js"
-},
+  "scripts": {
+    "start": "node src/app.js",
+    "create:table": "node src/scripts/create-table.js",
+    "seed:table": "node src/scripts/seed-data.js",
+    "sync:bulk": "node src/scripts/bulk-sync.js",
+    "sync:bulk:reset": "node src/scripts/bulk-sync.js --reset"
+  },
   "keywords": [],
   "author": "Mahmoud H. Isreawe",
   "license": "ISC",
   "dependencies": {
-    "@elastic/elasticsearch": "^9.0.1",
+    "@elastic/elasticsearch": "^8.14.0",
     "dotenv": "^16.5.0",
     "mysql2": "^3.14.1",
     "zongji": "^0.5.1"

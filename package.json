@@ -5,7 +5,8 @@
   "main": "index.js",
 "scripts": {
   "start": "node src/app.js",
-  "listen": "node src/binlog-listener.js"
+  "create:table": "node src/scripts/create-table.js",
+  "seed:table": "node src/scripts/seed-data.js"
 },
   "keywords": [],
   "author": "Mahmoud H. Isreawe",

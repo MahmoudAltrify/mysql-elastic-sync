@@ -8,15 +8,18 @@
     "create:table": "node src/scripts/create-table.js",
     "seed:table": "node src/scripts/seed-data.js",
     "sync:bulk": "node src/scripts/bulk-sync.js",
-    "sync:bulk:reset": "node src/scripts/bulk-sync.js --reset"
+    "sync:bulk:reset": "node src/scripts/bulk-sync.js --reset",
+    "register:connector": "node src/scripts/register-connector.js",
+    "consume": "node src/scripts/mysql-to-es.js"
   },
   "keywords": [],
   "author": "Mahmoud H. Isreawe",
   "license": "ISC",
   "dependencies": {
     "@elastic/elasticsearch": "^8.14.0",
+    "axios": "^1.9.0",
     "dotenv": "^16.5.0",
-    "mysql2": "^3.14.1",
-    "zongji": "^0.5.1"
+    "kafkajs": "^2.2.4",
+    "mysql2": "^3.14.1"
   }
 }
